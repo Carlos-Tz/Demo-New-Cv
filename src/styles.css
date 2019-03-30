@@ -1,1 +1,187 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face{
+    font-family: 'Bebas Neue';
+   /* src: url("assets/BebasNeue-Regular.woff2");*/
+   src: url("assets/BebasNeue-Regular.ttf");
+}
+:root {
+    --margin-first-page: 2em;
+    --margin-last-page: 2em;
+    --page-width: 21.59cm;
+    --page-height: 33.02cm; /*27.94   33.02*/
+    --page-color: #636467;
+    --page-inner-width: calc(100% - 7mm - 7mm);
+    --page-inner-height: calc(100% - 1cm - 1cm);
+    --page-inner-margin: 7mm;
+    --page-inner-top: 1cm;
+    --font-1: 'Lato', sans-serif;
+    --font-2: 'Raleway', sans-serif;
+    --font-3: 'Bebas Neue';
+    --font-size: 0.9em;
+    --background: #fafafa;
+    --text-color: #fff;
+    --logo-width: 3.5cm;
+    --input-text-color: #494b4e;
+    --head-color: #4369aa;
+  }
+  *,
+  *::after,
+  *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit; 
+  }
+  html { box-sizing: border-box; }
+  body {
+    font-family: var(--font-2);
+    background-color: var(--background);
+    font-size: var(--font-size);
+    color: var(--text-color);
+  }
+  @page {margin: 0;padding: 0;}
+  .page {
+    position: relative;
+    width: var(--page-width);
+    min-width: var(--page-width);
+    height: var(--page-height);
+    min-height: var(--page-height);
+    background: var(--page-color);
+    margin: 0 auto;
+    box-shadow: 1px 5px 15px #707070;
+  }
+  .page:first-of-type { margin-top: var(--margin-first-page); }
+  .page:last-of-type { margin-bottom: var(--margin-last-page); }
+  
+  .bar {
+    height: 100%;
+    background: -webkit-linear-gradient(to right, #dcddde 6.8cm, var(--page-color) 6.8cm );
+    background: linear-gradient(to right, #dcddde 6.8cm, var(--page-color) 6.8cm );
+  }
+  .bar > .inner {
+    position: relative;
+    width: var(--page-inner-width);
+    height: var(--page-inner-height);
+    margin: 0 var(--page-inner-margin);
+    top: var(--page-inner-top);
+    overflow: hidden;
+   /* border: 1.7px solid #E63469;*/
+  }
+  /* .page > .inner {
+    position: relative;
+    width: var(--page-inner-width);
+    height: var(--page-inner-height);
+    margin: 0 var(--page-inner-margin);
+    top: var(--page-inner-top);
+    overflow: hidden; 
+  } */
+  @media print{
+  :root {
+      --margin-first-page: 2em;
+      --margin-last-page: 2em;
+      --page-width: 21.59cm;
+      --page-height: 33.02cm;
+      --page-color: #636467;
+      --page-inner-width: calc(100% - 7mm - 7mm);
+      --page-inner-height: calc(100% - 1cm - 1cm);
+      --page-inner-margin: 7mm;
+      --page-inner-top: 1cm;
+      --font: 'Open Sans', sans-serif;
+      --font-size: 0.9em;
+      --background: #fafafa;
+      --text-color: #fff;
+      --logo-width: 3.5cm;
+      --input-text-color: #494b4e;
+      /*--primary-color: #BCDB68;*/
+      --border-color: #8d8d8d;
+      --head-color: #4369aa;
+    }
+    .no-print { display: none !important; }
+    nav {
+      display: none;
+      background-color: red;
+      height: 0;
+    }
+    .nav-bar {
+      display: none;
+      background-color: red;
+      height: 0;
+    }
+    .td {
+      display: table-cell;
+      vertical-align: middle;
+      border-bottom: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+    }
+    * {
+      -webkit-print-color-adjust: exact;
+    }
+    .page { 
+      box-shadow: none; 
+    }
+    .page:first-of-type { margin-top: 0 !important; }
+    .page:last-of-type { margin-bottom: 0 !important; }
+  }
+
+
+
+
+.menu {
+    height: 60px;
+    display: flex;
+    box-shadow: 0 1px 30px rgba(150, 150, 150, .8);
+    min-width: 21.59cm;
+  }
+  .brand-logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 200px;
+  }
+  .brand-logo .logo {height: 100%;}
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .menu-items {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    align-items: center;
+    height: 100%;
+  }
+  .menu-items li {
+    list-style-type: none;
+    margin-right: 2rem;
+  }
+  .menu-items li a {
+    text-decoration: none;
+    padding: 10px;
+  }
+  .menu-items li a:link,
+  .menu-items li a:visited {
+    color: #7c7c80;
+    font-size: .85rem;
+    font-weight: regular;
+  }
+  .menu-items li a.nav-save-btn {
+    background-color: #a4bd39;
+    color: #fff;
+    padding: 10px 32px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .svg-logo {
+    width: 100%;
+    height: 100%;
+  }
+  text {
+    font-family: var(--font-2);
+    font-weight: regular;
+    font-size: 35px;
+    fill: #7c7c80;
+  }
+  tspan {
+    fill: #a4bd39;
+  }
