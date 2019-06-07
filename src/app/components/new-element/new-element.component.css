@@ -156,10 +156,11 @@ header {
   .image-container input {opacity: 0;}
   .image-container {
    /* background-position: center 3mm; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: 103%;
+     background-repeat: no-repeat; 
+    background-size: 100%; 
     border-radius: 50%;
     border: 1px solid #fff;
+    height: 5cm;
   }
   input[type=file] {
     width: 5cm;/*4*/

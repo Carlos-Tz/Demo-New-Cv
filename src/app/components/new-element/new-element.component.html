@@ -15,7 +15,7 @@
 </nav> 
 
 <div class="app">
-  <form>
+  <form> 
     <section>
       <div class="page">
         <div class="bar">
@@ -23,17 +23,21 @@
             <div class="content">
               <div class="uptitle">
                 <div class="col2 ">
-                  <input type="text" value="FECHA">
+                  <input type="text" value="FECHA: {{ fecha }}">
                 </div>
               </div>
               <header class="header">
                 <div class="avatar">                  
-                  <div class="image-container"><input type="file" accept="image/*"></div>
+                  <div class="image-container"  [style.background-image]="'url(' + image + ')'">
+                    <!-- <img src={{image}} alt=""> -->
+                    <input type="file" accept="image/*" (change)="changeListener($event)">
+                  </div> 
+                  
                   <div class="info">
                     <div class="title">
                       <div class="col2 ">
-                        <textarea id="name" rows="3">JASON MARTIN BROWN GARCÍA</textarea>
-                        <textarea id="profession" rows="2">DISEÑADOR GRÁFICO</textarea>
+                        <textarea id="name" rows="3" class="form-control" name="name" [(ngModel)]="element.name"></textarea>
+                        <textarea id="profession" rows="2" class="form-control" name="profesion" [(ngModel)]="element.profesion"></textarea>
                       </div>
                     </div>
                   </div>
@@ -48,17 +52,17 @@
                         <td class="c1">
                           <div class="subtitle">
                             <div class="col2">
-                              <input id="" type="text" value="Vison multitune.net">
-                              <input id="" type="text" value="2015 - 2018">
+                              <input class="form-control" name="e1c" [(ngModel)]="element.e1Company" type="text">
+                              <input class="form-control" name="e1p" [(ngModel)]="element.e1Period" type="text">
                             </div>
                           </div>
                         </td>
                         <td class="c2">
                           <div class="subtitle">
                             <div class="col2">
-                              <input id="" type="text" value="SENIOR WEB DEVELOPER">
+                              <input class="form-control" name="e1r" [(ngModel)]="element.e1Roll" type="text">
                               <textarea id="txa" rows="3" cols="34"
-                                wrap="soft">Porttitor amet massa Done cporttitor dolor et nisl molestie ium feliscon lore ipsum dolor tfringilla. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</textarea>
+                                wrap="soft" class="form-control" name="e1d" [(ngModel)]="element.e1Descrip"></textarea>
 
                             </div>
                           </div>
@@ -68,17 +72,17 @@
                         <td class="c1">
                           <div class="subtitle">
                             <div class="col2">
-                              <input id="" type="text" value="Soft Tech Lomited">
-                              <input id="" type="text" value="2013 - 2015">
+                              <input class="form-control" name="e2c" [(ngModel)]="element.e2Company" type="text">
+                              <input class="form-control" name="e2p" [(ngModel)]="element.e2Period" type="text">
                             </div>
                           </div>
                         </td>
                         <td class="c2">
                           <div class="subtitle">
                             <div class="col2">
-                              <input id="" type="text" value="LEAD WEB DEVELOPER">
-                              <textarea id="txa" rows="3" cols="34"
-                                wrap="soft">Porttitor amet massa Done cporttitor dolor et nisl molestie ium feliscon lore ipsum dolor tfringilla. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</textarea>
+                              <input class="form-control" name="e2r" [(ngModel)]="element.e2Roll" type="text">
+                              <textarea id="txa" rows="3" cols="34" class="form-control" name="e2d" [(ngModel)]="element.e2Descrip"
+                                wrap="soft"></textarea>
                             </div>
                           </div>
                         </td>
@@ -88,17 +92,17 @@
                         <td class="c1">
                           <div class="subtitle">
                             <div class="col2">
-                              <input id="" type="text" value="Creative Corporation">
-                              <input id="" type="text" value="2011 - 2013">
+                              <input class="form-control" name="e3c" [(ngModel)]="element.e3Company" type="text">
+                              <input class="form-control" name="e3p" [(ngModel)]="element.e3Period" type="text">
                             </div>
                           </div>
                         </td>
                         <td class="c2">
                           <div class="subtitle">
                             <div class="col2">
-                              <input id="" type="text" value="WEB & GRAPHIC DESIGNER">
+                              <input class="form-control" name="e3r" [(ngModel)]="element.e3Roll" type="text">
                               <textarea id="txa" rows="3" cols="34"
-                                wrap="soft">Porttitor amet massa Done cporttitor dolor et nisl molestie ium feliscon lore ipsum dolor tfringilla. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</textarea>
+                                wrap="soft" class="form-control" name="e3d" [(ngModel)]="element.e3Descrip"></textarea>
                             </div>
                           </div>
                         </td>
@@ -108,17 +112,17 @@
                         <td class="c1">
                           <div class="subtitle">
                             <div class="col2">
-                              <input id="" type="text" value="Vison multitune">
-                              <input id="" type="text" value="2015 - 2018">
+                              <input class="form-control" name="e4c" [(ngModel)]="element.e4Company" type="text">
+                              <input class="form-control" name="e4p" [(ngModel)]="element.e4Period" type="text">
                             </div>
                           </div>
                         </td>
                         <td class="c2">
                           <div class="subtitle">
                             <div class="col2">
-                              <input id="" type="text" value="SENIOR WEB DEVELOPER">
+                              <input class="form-control" name="e4r" [(ngModel)]="element.e4Roll" type="text">
                               <textarea id="txa" rows="3" cols="34"
-                                wrap="soft">Porttitor amet massa Done cporttitor dolor et nisl molestie ium feliscon lore ipsum dolor tfringilla. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</textarea>
+                                wrap="soft" class="form-control" name="e4d" [(ngModel)]="element.e4Descrip"></textarea>
 
                             </div>
                           </div>
@@ -135,7 +139,7 @@
                       <h2>ACERCA DE MI</h2>
                       <div class="subtitle">
                         <div class="col2">
-                          <textarea name="" id="about" rows="10">My name is Jason Martin lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eveniet repudiandae deserunt, eius accusantium nostrum asperiores voluptas minima distinctio unde ducimus molestias reiciendis vero. Voluptate quasi in animi provident veritatis.
+                          <textarea name="" id="about" rows="10" class="form-control" name="about" [(ngModel)]="element.about">
                           </textarea>
                         </div>
                       </div>
@@ -147,11 +151,11 @@
                       <div class="subtitle">
                         <div class="col2" id="reff">
                           <span>Dirección:</span>
-                          <input type="text" value="Home Address, City Town, Country">
+                          <input type="text" class="form-control" name="ca" [(ngModel)]="element.cAddress">
                           <span>Teléfono:</span>
-                          <input type="text" value="+ 1234 567 889">
+                          <input type="text" class="form-control" name="cp" [(ngModel)]="element.cPhone">
                           <span>Email:</span>
-                          <input type="text" value="jasonMartin@mail.com">
+                          <input type="text" class="form-control" name="ce" [(ngModel)]="element.cEmail">
                         </div>
                       </div>
                     </div>
@@ -161,18 +165,18 @@
                       <h2>REFERENCIAS</h2>
                       <div class="subtitle">
                         <div class="col2" id="reff">
-                          <input type="text" id="rerName" value="JOHNS MICHAEL">
-                          <input type="text" value="Director, Matrix media limited">
-                          <span>Teléfono:</span><input type="text" value="+555 123 5566">
-                          <span>Email:</span><input type="text" value="johnsMichael@mail.com">
+                          <input type="text" id="rerName" class="form-control" name="r1n" [(ngModel)]="element.r1Name">
+                          <input type="text" class="form-control" name="r1r" [(ngModel)]="element.r1Roll">
+                          <span>Teléfono:</span><input type="text" class="form-control" name="r1p" [(ngModel)]="element.r1Phone">
+                          <span>Email:</span><input type="text" class="form-control" name="r1e" [(ngModel)]="element.r1Email">
                         </div>
                       </div>
                       <div class="subtitle">
                         <div class="col2" id="reff">
-                          <input type="text" id="rerName" value="RYAN CURTIS">
-                          <input type="text" value="Director, Matrix media limited">
-                          <span>Teléfono:</span><input type="text" value="+555 123 5566">
-                          <span>Email:</span><input type="text" value="ryanCurtis@mail.com">
+                          <input type="text" id="rerName" class="form-control" name="r2n" [(ngModel)]="element.r2Name">
+                          <input type="text" class="form-control" name="r2r" [(ngModel)]="element.r2Roll">
+                          <span>Teléfono:</span><input type="text" class="form-control" name="r2p" [(ngModel)]="element.r2Phone">
+                          <span>Email:</span><input type="text" class="form-control" name="r2e" [(ngModel)]="element.r2Email">
                         </div>
                       </div>
                     </div>
@@ -188,17 +192,17 @@
                           <td class="c1">
                             <div class="subtitle">
                               <div class="col2">
-                                <input id="" type="text" value="Asian University">
-                                <input id="" type="text" value="2010 - 2015">
+                                <input class="form-control" name="s1s" [(ngModel)]="element.s1School" type="text">
+                                <input class="form-control" name="s1p" [(ngModel)]="element.s1Period" type="text">
                               </div>
                             </div>
                           </td>
                           <td class="c2">
                             <div class="subtitle">
                               <div class="col2">
-                                <input id="" type="text" value="BACHELORS OF ARTS">
+                                <input class="form-control" name="s1do" [(ngModel)]="element.s1Docum" type="text">
                                 <textarea id="txa" rows="3" cols="34"
-                                  wrap="soft">Porttitor amet massa Done cporttitor dolor et nisl molestie ium feliscon lore ipsum dolor tfringilla. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</textarea>
+                                  wrap="soft" class="form-control" name="s1d" [(ngModel)]="element.s1Descrip"></textarea>
                               </div>
                             </div>
                           </td>
@@ -208,17 +212,17 @@
                           <td class="c1">
                             <div class="subtitle">
                               <div class="col2">
-                                <input id="" type="text" value="Creative School">
-                                <input id="" type="text" value="2008 - 2010">
+                                <input class="form-control" name="s2s" [(ngModel)]="element.s2School" type="text">
+                                <input class="form-control" name="s2p" [(ngModel)]="element.s2Period" type="text">
                               </div>
                             </div>
                           </td>
                           <td class="c2">
                             <div class="subtitle">
                               <div class="col2">
-                                <input id="" type="text" value="HIGHER SECONDARY EXAMINATION">
+                                <input class="form-control" name="s2do" [(ngModel)]="element.s2Docum" type="text">
                                 <textarea id="txa" rows="3" cols="34"
-                                  wrap="soft">Porttitor amet massa Done cporttitor dolor et nisl molestie ium feliscon lore ipsum dolor tfringilla. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</textarea>
+                                  wrap="soft" class="form-control" name="s2d" [(ngModel)]="element.s2Descrip"></textarea>
                               </div>
                             </div>
                           </td>
@@ -228,17 +232,17 @@
                           <td class="c1">
                             <div class="subtitle">
                               <div class="col2">
-                                <input id="" type="text" value="Creative School">
-                                <input id="" type="text" value="2006 - 2008">
+                                <input class="form-control" name="s3s" [(ngModel)]="element.s3School" type="text">
+                                <input class="form-control" name="s3p" [(ngModel)]="element.s3Period" type="text">
                               </div>
                             </div>
                           </td>
                           <td class="c2">
                             <div class="subtitle">
                               <div class="col2">
-                                <input id="" type="text" value="HIGHER SECONDARY EXAMINATION">
+                                <input class="form-control" name="s3do" [(ngModel)]="element.s3Docum" type="text">
                                 <textarea id="txa" rows="3" cols="34"
-                                  wrap="soft">Porttitor amet massa Done cporttitor dolor et nisl molestie ium feliscon lore ipsum dolor tfringilla. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</textarea>
+                                  wrap="soft" class="form-control" name="s3d" [(ngModel)]="element.s3Descrip"></textarea>
                               </div>
                             </div>
                           </td>
@@ -248,17 +252,17 @@
                           <td class="c1">
                             <div class="subtitle">
                               <div class="col2">
-                                <input id="" type="text" value="Creative School">
-                                <input id="" type="text" value="2004 - 2006">
+                                <input class="form-control" name="s4s" [(ngModel)]="element.s4School" type="text">
+                                <input class="form-control" name="s4p" [(ngModel)]="element.s4Period" type="text">
                               </div>
                             </div>
                           </td>
                           <td class="c2">
                             <div class="subtitle">
                               <div class="col2">
-                                <input id="" type="text" value="HIGHER SECONDARY EXAMINATION">
+                                <input class="form-control" name="s4do" [(ngModel)]="element.s4Docum" type="text">
                                 <textarea id="txa" rows="3" cols="32"
-                                  wrap="soft">Porttitor amet massa Done cporttitor dolor et nisl molestie ium feliscon lore ipsum dolor tfringilla. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</textarea>
+                                  wrap="soft" class="form-control" name="s4d" [(ngModel)]="element.s4Descrip"></textarea>
                               </div>
                             </div>
                           </td>
@@ -275,45 +279,45 @@
                         <div class="skill">
                           <div class="subtitle">
                             <div class="col2">
-                              <input id="follow" type="text" value="PHOTOSHOP">
+                              <input id="follow" type="text" class="form-control" name="sk1d" [(ngModel)]="element.skill1D">
                               <input style="padding-left: 0;" type="range" name="range" id="range" min="0" max="100"
-                                step="5" value="80" (change)="change($event)" />
-                              <input id="follow" type="text" value="ILLUSTRATOR">
+                                step="5" class="form-control" name="sk1" [(ngModel)]="element.skill1"/>
+                              <input id="follow" type="text" class="form-control" name="sk2d" [(ngModel)]="element.skill2D">
                               <input style="padding-left: 0;" type="range" name="range" id="range" min="0" max="100"
-                                step="5" value="50" />
-                              <input id="follow" type="text" value="INDESIGN">
+                                step="5" class="form-control" name="sk2" [(ngModel)]="element.skill2"/>
+                              <input id="follow" type="text" class="form-control" name="sk3d" [(ngModel)]="element.skill3D">
                               <input style="padding-left: 0;" type="range" name="range" id="range" min="0" max="100"
-                                step="5" value="60" />
+                                step="5" class="form-control" name="sk3" [(ngModel)]="element.skill3"/>
                             </div>
                           </div>
                         </div>
                         <div class="skill">
                           <div class="subtitle">
                             <div class="col2">
-                              <input id="follow" type="text" value="MS WORD">
+                              <input id="follow" type="text" class="form-control" name="sk4D" [(ngModel)]="element.skill4D">
                               <input style="padding-left: 0;" type="range" name="range" id="range" min="0" max="100"
-                                step="5" value="30" />
-                              <input id="follow" type="text" value="MS EXCEL">
+                                step="5" class="form-control" name="sk4" [(ngModel)]="element.skill4" />
+                              <input id="follow" type="text" class="form-control" name="sk5D" [(ngModel)]="element.skill5D">
                               <input style="padding-left: 0;" type="range" name="range" id="range" min="0" max="100"
-                                step="5" value="50" />
-                              <input id="follow" type="text" value="ANDROID">
+                                step="5" class="form-control" name="sk5" [(ngModel)]="element.skill5" />
+                              <input id="follow" type="text" class="form-control" name="sk6D" [(ngModel)]="element.skill6D">
                               <input style="padding-left: 0;" type="range" name="range" id="range" min="0" max="100"
-                                step="5" value="100" />
+                                step="5" class="form-control" name="sk6" [(ngModel)]="element.skill6"/>
                             </div>
                           </div>
                         </div>
                         <div class="skill">
                           <div class="subtitle">
                             <div class="col2">
-                              <input id="follow" type="text" value="COREL DRAW">
+                              <input id="follow" type="text" class="form-control" name="sk7d" [(ngModel)]="element.skill7D">
                               <input style="padding-left: 0;" type="range" name="range" id="range" min="0" max="100"
-                                step="5" value="30" />
-                              <input id="follow" type="text" value="IOS">
+                                step="5" class="form-control" name="sk7" [(ngModel)]="element.skill7" />
+                              <input id="follow" type="text" class="form-control" name="sk8d" [(ngModel)]="element.skill8D">
                               <input style="padding-left: 0;" type="range" name="range" id="range" min="0" max="100"
-                                step="5" value="90" />
-                              <input id="follow" type="text" value="DISEÑO WEB">
+                                step="5" class="form-control" name="sk8" [(ngModel)]="element.skill8" />
+                              <input id="follow" type="text" class="form-control" name="sk9d" [(ngModel)]="element.skill9D">
                               <input style="padding-left: 0;" type="range" name="range" id="range" min="0" max="100"
-                                step="5" value="10" />
+                                step="5" class="form-control" name="sk9" [(ngModel)]="element.skill9"/>
                             </div>
                           </div>
                         </div>
@@ -334,5 +338,5 @@
       <img src="assets/Boton guardar.png" alt="" width="75" height="75">
     </div>
 
-  </form>
+   </form>
 </div>

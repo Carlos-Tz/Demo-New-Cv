@@ -1,13 +1,17 @@
 export interface Element {
     name: string;
+    avatar: string;
     profesion: string;
+    about: string;
     cAddress: string;
     cPhone: string;
     cEmail: string;
     r1Name: string;
+    r1Roll: string;
     r1Phone: string;
     r1Email: string;
     r2Name: string;
+    r2Roll: string;
     r2Phone: string;
     r2Email: string;
     e1Company: string;

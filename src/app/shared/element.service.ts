@@ -19,4 +19,9 @@ export class ElementService {
     this.elementsList = this.db.list('elements');
     return this.elementsList;
   }
+
+  GetElement(key: string){
+    this.elementObject = this.db.object('elements/' + key);
+    return this.elementObject;
+  }
 }
